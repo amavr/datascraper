@@ -1,0 +1,5 @@
+D:\Projects\CS\Utils\DSBH\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\CS\Utils\DSBH\bin\Debug\DSBH.exe
+D:\Projects\CS\Utils\DSBH\bin\Debug\DSBH.pdb
+D:\Projects\CS\Utils\DSBH\obj\Debug\DSBH.exe
+D:\Projects\CS\Utils\DSBH\obj\Debug\DSBH.pdb

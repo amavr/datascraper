@@ -1,0 +1,5 @@
+D:\Projects\CS\Utils\DSBH\obj\Release\ResolveAssemblyReference.cache
+D:\Projects\CS\Utils\DSBH\bin\Release\DSBH.exe
+D:\Projects\CS\Utils\DSBH\bin\Release\DSBH.pdb
+D:\Projects\CS\Utils\DSBH\obj\Release\DSBH.exe
+D:\Projects\CS\Utils\DSBH\obj\Release\DSBH.pdb
