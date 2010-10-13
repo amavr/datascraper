@@ -1,0 +1,12 @@
+D:\Projects\CS\Test\DSX\dsxeditor\bin\Debug\dsxactions.dll
+D:\Projects\CS\Test\DSX\dsxeditor\bin\Debug\dsxactions.pdb
+D:\Projects\CS\Test\DSX\dsxeditor\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\CS\Test\DSX\dsxeditor\obj\Debug\DataScraper.AboutBox.resources
+D:\Projects\CS\Test\DSX\dsxeditor\obj\Debug\DataScraper.frmMain.resources
+D:\Projects\CS\Test\DSX\dsxeditor\obj\Debug\DataScraper.Properties.Resources.resources
+D:\Projects\CS\Test\DSX\dsxeditor\obj\Debug\dsxeditor.csproj.GenerateResource.Cache
+D:\Projects\CS\Test\DSX\dsxeditor\bin\Debug\dsxedit.exe.config
+D:\Projects\CS\Test\DSX\dsxeditor\bin\Debug\dsxedit.exe
+D:\Projects\CS\Test\DSX\dsxeditor\bin\Debug\dsxedit.pdb
+D:\Projects\CS\Test\DSX\dsxeditor\obj\Debug\dsxedit.exe
+D:\Projects\CS\Test\DSX\dsxeditor\obj\Debug\dsxedit.pdb

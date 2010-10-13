@@ -1,0 +1,5 @@
+D:\Projects\CS\Test\DSX\dsxactions\bin\Debug\dsxactions.dll
+D:\Projects\CS\Test\DSX\dsxactions\bin\Debug\dsxactions.pdb
+D:\Projects\CS\Test\DSX\dsxactions\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\CS\Test\DSX\dsxactions\obj\Debug\dsxactions.dll
+D:\Projects\CS\Test\DSX\dsxactions\obj\Debug\dsxactions.pdb

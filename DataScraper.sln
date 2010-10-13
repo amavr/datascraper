@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dsxactions", "dsxactions\dsxactions.csproj", "{71A2D0D0-257E-462A-8433-104B80C370A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dsxeditor", "dsxeditor\dsxeditor.csproj", "{BDFD3369-AE50-4B86-BE78-9C1EA7C4187B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dsxrunner", "dsxrunner\dsxrunner.csproj", "{1C477C0D-C499-4350-9554-94BE3E388E3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71A2D0D0-257E-462A-8433-104B80C370A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A2D0D0-257E-462A-8433-104B80C370A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A2D0D0-257E-462A-8433-104B80C370A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A2D0D0-257E-462A-8433-104B80C370A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFD3369-AE50-4B86-BE78-9C1EA7C4187B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFD3369-AE50-4B86-BE78-9C1EA7C4187B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFD3369-AE50-4B86-BE78-9C1EA7C4187B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFD3369-AE50-4B86-BE78-9C1EA7C4187B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C477C0D-C499-4350-9554-94BE3E388E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C477C0D-C499-4350-9554-94BE3E388E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C477C0D-C499-4350-9554-94BE3E388E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C477C0D-C499-4350-9554-94BE3E388E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
