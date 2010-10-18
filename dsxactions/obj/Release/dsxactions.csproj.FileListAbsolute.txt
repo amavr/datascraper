@@ -3,3 +3,8 @@ D:\Projects\CS\Test\DSX\dsxactions\bin\Release\dsxactions.dll
 D:\Projects\CS\Test\DSX\dsxactions\bin\Release\dsxactions.pdb
 D:\Projects\CS\Test\DSX\dsxactions\obj\Release\dsxactions.dll
 D:\Projects\CS\Test\DSX\dsxactions\obj\Release\dsxactions.pdb
+D:\Projects\CS\Utils\dsx\dsxactions\bin\Release\dsxactions.dll
+D:\Projects\CS\Utils\dsx\dsxactions\bin\Release\dsxactions.pdb
+D:\Projects\CS\Utils\dsx\dsxactions\obj\Release\ResolveAssemblyReference.cache
+D:\Projects\CS\Utils\dsx\dsxactions\obj\Release\dsxactions.dll
+D:\Projects\CS\Utils\dsx\dsxactions\obj\Release\dsxactions.pdb

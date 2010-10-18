@@ -5,3 +5,5 @@ D:\Projects\CS\Test\DSX\dsxrunner\bin\Debug\dsxactions.pdb
 D:\Projects\CS\Test\DSX\dsxrunner\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\CS\Test\DSX\dsxrunner\obj\Debug\dsxrun.exe
 D:\Projects\CS\Test\DSX\dsxrunner\obj\Debug\dsxrun.pdb
+D:\Projects\CS\Utils\dsx\dsxrunner\obj\Debug\dsxrun.exe
+D:\Projects\CS\Utils\dsx\dsxrunner\obj\Debug\dsxrun.pdb
