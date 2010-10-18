@@ -115,6 +115,8 @@ namespace DataScraper
             {
 
                 string url2 = wresp.Headers["Location"];
+                if (url2.Substring(0, 1) == "/")
+                    url2 = String.Format("{0}://{1}{2}", uri.Scheme, uri.Host, url2);
                 Uri uri2 = new Uri(url2);
 
                 wreq = (HttpWebRequest)WebRequest.Create(uri2);
@@ -145,7 +147,7 @@ namespace DataScraper
                 {
                     i--;
                     Log("url: {0}", URI);
-                    Console.WriteLine("{0}[{1:000}]->{2}", Label, Thread.CurrentThread.ManagedThreadId, InputFlow);
+                    Console.WriteLine("{0}[{1:000}]->{2}", Label, Thread.CurrentThread.ManagedThreadId, URI);
                     response = Request(URI);
                     break;
                 }

@@ -134,7 +134,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 16);
             this.label5.TabIndex = 28;
-            this.label5.Text = "2.3";
+            this.label5.Text = "2.5";
             // 
             // tableLayoutPanel1
             // 

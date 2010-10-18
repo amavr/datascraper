@@ -60,8 +60,8 @@ namespace DataScraper
                 int tid = Thread.CurrentThread.ManagedThreadId;
                 try
                 {
-                    Console.WriteLine("{0}[{1:000}]->{2}", Label, tid, url);
-                    //Log("Action \"{0}\" loads data from: {1}", Label, url);
+                    // Console.WriteLine("{0}[{1:000}]->{2}", Label, tid, url);
+                    // Log("Action \"{0}\" loads data from: {1}", Label, url);
 
                     OutputFlow = WrappedRequest(url);
                 }
