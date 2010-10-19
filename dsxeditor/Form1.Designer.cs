@@ -77,6 +77,7 @@
             this.btnNewSetVar = new System.Windows.Forms.ToolStripButton();
             this.btnNewGetVar = new System.Windows.Forms.ToolStripButton();
             this.btnNewSave = new System.Windows.Forms.ToolStripButton();
+            this.btnNewCookie = new System.Windows.Forms.ToolStripButton();
             this.btnNewDate = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRun = new System.Windows.Forms.ToolStripButton();
@@ -97,6 +98,7 @@
             this.tboxBack = new System.Windows.Forms.TextBox();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
             this.dlgSave = new System.Windows.Forms.SaveFileDialog();
+            this.newCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -119,7 +121,7 @@
             this.slabTime});
             this.statusBar.Location = new System.Drawing.Point(0, 345);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(730, 22);
+            this.statusBar.Size = new System.Drawing.Size(852, 22);
             this.statusBar.TabIndex = 0;
             // 
             // slabTime
@@ -137,7 +139,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(730, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(852, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -210,6 +212,7 @@
             this.miNewVarSet,
             this.miNewVarGet,
             this.newSaveToolStripMenuItem,
+            this.newCookieToolStripMenuItem,
             this.newDateToolStripMenuItem});
             this.actionToolStripMenuItem.Name = "actionToolStripMenuItem";
             this.actionToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
@@ -325,6 +328,7 @@
             this.btnNewSetVar,
             this.btnNewGetVar,
             this.btnNewSave,
+            this.btnNewCookie,
             this.btnNewDate,
             this.toolStripSeparator3,
             this.btnRun,
@@ -334,7 +338,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(8, 0, 1, 0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(730, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(852, 31);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -578,6 +582,17 @@
             this.btnNewSave.ToolTipText = "New save action";
             this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
             // 
+            // btnNewCookie
+            // 
+            this.btnNewCookie.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNewCookie.Image = ((System.Drawing.Image)(resources.GetObject("btnNewCookie.Image")));
+            this.btnNewCookie.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNewCookie.Name = "btnNewCookie";
+            this.btnNewCookie.Size = new System.Drawing.Size(28, 28);
+            this.btnNewCookie.Text = "New Cookie";
+            this.btnNewCookie.ToolTipText = "New Cookie Action";
+            this.btnNewCookie.Click += new System.EventHandler(this.btnNewCookie_Click);
+            // 
             // btnNewDate
             // 
             this.btnNewDate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -644,8 +659,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(730, 290);
-            this.splitContainer1.SplitterDistance = 242;
+            this.splitContainer1.Size = new System.Drawing.Size(852, 290);
+            this.splitContainer1.SplitterDistance = 282;
             this.splitContainer1.TabIndex = 3;
             // 
             // treeScript
@@ -659,7 +674,7 @@
             this.treeScript.Name = "treeScript";
             this.treeScript.SelectedImageIndex = 0;
             this.treeScript.ShowNodeToolTips = true;
-            this.treeScript.Size = new System.Drawing.Size(242, 290);
+            this.treeScript.Size = new System.Drawing.Size(282, 290);
             this.treeScript.TabIndex = 0;
             this.treeScript.DragLeave += new System.EventHandler(this.treeScript_DragLeave);
             this.treeScript.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeScript_DragDrop);
@@ -682,6 +697,7 @@
             this.ilActions.Images.SetKeyName(7, "next16.png");
             this.ilActions.Images.SetKeyName(8, "import16.png");
             this.ilActions.Images.SetKeyName(9, "calendar_16.gif");
+            this.ilActions.Images.SetKeyName(10, "cookie-16.png");
             // 
             // splitContainer2
             // 
@@ -698,7 +714,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabs);
-            this.splitContainer2.Size = new System.Drawing.Size(484, 290);
+            this.splitContainer2.Size = new System.Drawing.Size(566, 290);
             this.splitContainer2.SplitterDistance = 138;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -709,7 +725,7 @@
             this.panBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panBox.Location = new System.Drawing.Point(0, 0);
             this.panBox.Name = "panBox";
-            this.panBox.Size = new System.Drawing.Size(484, 138);
+            this.panBox.Size = new System.Drawing.Size(566, 138);
             this.panBox.TabIndex = 0;
             // 
             // props
@@ -721,7 +737,7 @@
             this.props.Margin = new System.Windows.Forms.Padding(0, 1, 4, 2);
             this.props.Name = "props";
             this.props.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.props.Size = new System.Drawing.Size(484, 138);
+            this.props.Size = new System.Drawing.Size(566, 138);
             this.props.TabIndex = 0;
             this.props.ToolbarVisible = false;
             this.props.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.props_PropertyValueChanged);
@@ -735,7 +751,7 @@
             this.tabs.Location = new System.Drawing.Point(0, 0);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(484, 148);
+            this.tabs.Size = new System.Drawing.Size(566, 148);
             this.tabs.TabIndex = 0;
             // 
             // tabSour
@@ -744,7 +760,7 @@
             this.tabSour.Location = new System.Drawing.Point(4, 22);
             this.tabSour.Name = "tabSour";
             this.tabSour.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSour.Size = new System.Drawing.Size(476, 122);
+            this.tabSour.Size = new System.Drawing.Size(558, 122);
             this.tabSour.TabIndex = 0;
             this.tabSour.Text = "Input";
             this.tabSour.UseVisualStyleBackColor = true;
@@ -757,7 +773,7 @@
             this.tboxSour.Multiline = true;
             this.tboxSour.Name = "tboxSour";
             this.tboxSour.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tboxSour.Size = new System.Drawing.Size(470, 116);
+            this.tboxSour.Size = new System.Drawing.Size(552, 116);
             this.tboxSour.TabIndex = 0;
             // 
             // tabDest
@@ -766,7 +782,7 @@
             this.tabDest.Location = new System.Drawing.Point(4, 22);
             this.tabDest.Name = "tabDest";
             this.tabDest.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDest.Size = new System.Drawing.Size(476, 122);
+            this.tabDest.Size = new System.Drawing.Size(558, 122);
             this.tabDest.TabIndex = 1;
             this.tabDest.Text = "Output";
             this.tabDest.UseVisualStyleBackColor = true;
@@ -779,7 +795,7 @@
             this.tboxDest.Multiline = true;
             this.tboxDest.Name = "tboxDest";
             this.tboxDest.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tboxDest.Size = new System.Drawing.Size(470, 116);
+            this.tboxDest.Size = new System.Drawing.Size(552, 116);
             this.tboxDest.TabIndex = 1;
             this.tboxDest.WordWrap = false;
             // 
@@ -789,7 +805,7 @@
             this.tabBack.Location = new System.Drawing.Point(4, 22);
             this.tabBack.Name = "tabBack";
             this.tabBack.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBack.Size = new System.Drawing.Size(476, 122);
+            this.tabBack.Size = new System.Drawing.Size(558, 122);
             this.tabBack.TabIndex = 2;
             this.tabBack.Text = "Result";
             this.tabBack.UseVisualStyleBackColor = true;
@@ -802,7 +818,7 @@
             this.tboxBack.Multiline = true;
             this.tboxBack.Name = "tboxBack";
             this.tboxBack.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tboxBack.Size = new System.Drawing.Size(470, 116);
+            this.tboxBack.Size = new System.Drawing.Size(552, 116);
             this.tboxBack.TabIndex = 2;
             this.tboxBack.WordWrap = false;
             // 
@@ -816,11 +832,18 @@
             this.dlgSave.DefaultExt = "dsx";
             this.dlgSave.Filter = "Script files|*.dsx|Xml files|*.xml|All files|*.*";
             // 
+            // newCookieToolStripMenuItem
+            // 
+            this.newCookieToolStripMenuItem.Name = "newCookieToolStripMenuItem";
+            this.newCookieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newCookieToolStripMenuItem.Text = "New cookie";
+            this.newCookieToolStripMenuItem.Click += new System.EventHandler(this.btnNewCookie_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 367);
+            this.ClientSize = new System.Drawing.Size(852, 367);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusBar);
@@ -925,6 +948,8 @@
         private System.Windows.Forms.ToolStripButton btnNewDate;
         private System.Windows.Forms.ToolStripMenuItem newSaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newDateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnNewCookie;
+        private System.Windows.Forms.ToolStripMenuItem newCookieToolStripMenuItem;
     }
 }
 

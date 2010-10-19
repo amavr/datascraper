@@ -23,8 +23,9 @@ namespace DataScraper
 
         protected override void InternalExecute()
         {
-            OutputFlow = VarTable.ParseVariables(Text);
-            CookieStorage.Cookies = Text;
+            CookieStorage.Cookies = VarTable.ParseVariables(Text);
+            
+            OutputFlow = InputFlow;
             ExecuteChild(OutputFlow);
         }
 
