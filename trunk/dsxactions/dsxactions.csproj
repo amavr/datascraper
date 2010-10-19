@@ -63,6 +63,7 @@
     <Compile Include="ProxyStorage.cs" />
     <Compile Include="ScriptAction.cs" />
     <Compile Include="ScriptConsts.cs" />
+    <Compile Include="ScriptCookieAction.cs" />
     <Compile Include="ScriptDateAction.cs" />
     <Compile Include="ScriptDownloadAction.cs" />
     <Compile Include="ScriptFindAction.cs" />
