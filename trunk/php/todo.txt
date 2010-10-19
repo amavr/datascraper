@@ -1,0 +1,3 @@
+- ” ScriptNextURLAction нет ограничени€ страниц
+- добавлена нова€ акци€ ScriptCookieAction, через которую можно задать значение кук
+- ¬ ScriptTextAction (text), ScriptNextUrlAction (formatingString), ScriptCookieAction (text) надо добавить парсинг именованых переменных
