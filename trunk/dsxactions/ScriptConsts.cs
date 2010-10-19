@@ -14,6 +14,7 @@ namespace DataScraper
         public const string ATTR_TYPE = "type";
 
         public const string TYPE_TEXT = "text";
+        public const string TYPE_COOK = "cookie";
         public const string TYPE_DATE = "date";
         public const string TYPE_SAVE = "save";
         public const string TYPE_FIND = "find";

@@ -1,11 +1,11 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartArguments>
-    </StartArguments>
+    <StartArguments>test.dsx</StartArguments>
+    <StartWorkingDirectory>D:\Projects\DSX\drakon\tervolina.ru</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <StartArguments>
-    </StartArguments>
+    <StartArguments>test.dsx</StartArguments>
+    <StartWorkingDirectory>D:\Projects\DSX\drakon\tervolina.ru</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup>
     <PublishUrlHistory>http://localhost/DataScraper/</PublishUrlHistory>

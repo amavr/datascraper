@@ -124,6 +124,10 @@ namespace DataScraper
                     action = new ScriptTextAction();
                     break;
 
+                case ScriptConsts.TYPE_COOK:
+                    action = new ScriptCookieAction();
+                    break;
+
                 case ScriptConsts.TYPE_DATE:
                     action = new ScriptDateAction();
                     break;
