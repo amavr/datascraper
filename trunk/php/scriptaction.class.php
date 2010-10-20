@@ -28,8 +28,6 @@ abstract class ScriptAction
 		$this->bData = "";
 		try
 		{
-			$this->executeInternal($deep);
-
 			if($this->debugMode)
 			{
 				$msg  ="\n--------- BEG iData ---------";
@@ -37,14 +35,19 @@ abstract class ScriptAction
 				$msg .="\n".$this->iData;
 				$msg .="\n--------- END iData ---------";
 				$this->trace($msg);
-
+			}
+			
+			$this->executeInternal($deep);
+			
+			if($this->debugMode)
+			{
 				$msg  ="\n--------- BEG oData ---------";
 				$msg .= $this->name;
 				$msg .="\n".$this->oData;
 				$msg .="\n--------- END oData ---------";
 				$this->trace($msg);
 			}
-
+			
 			return true;
 		}
 		catch(Exception $e)

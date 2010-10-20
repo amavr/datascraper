@@ -1,6 +1,6 @@
 <?php
 
-class ScriptNextURLAction extends ScriptAction
+class ScriptNextURLAction extends ScriptLoadAction
 {
     public $fmtstr = "";
 	public $pattern = "";
@@ -21,6 +21,12 @@ class ScriptNextURLAction extends ScriptAction
 		do
 		{
 			$this->oData = $this->read($url);
+			
+			if(stripos(trim($url), "http://") === 0)
+				$this->oData = $this->loadText($url);
+			else
+				$this->oData = $this->read($url);
+			
 			if($deep)
 				$this->executeChild();
 			else
@@ -69,30 +75,6 @@ class ScriptNextURLAction extends ScriptAction
         $this->fmtstr = $element->getAttribute("format-string");
         $this->do_equal = (strtoupper($element->getAttribute("append")) == "TRUE") ? true : false;
     }
-
-	public function read($url)
-	{
-		// return file_get_contents ($url);
-		
-		$this->trace("NextURLAction load from: ".$url);
-		$msg = "";
-		$i = 5;
-		while($i > 0)
-		{
-			$data = file_get_contents($url);
-			if($data == false)
-			{
-				$i--;
-				$fmt = "ERROR ActionNextURL->read(%s)";
-				$msg = sprintf($fmt, $url);
-				$this->trace($msg);
-			}
-			else
-				return $data;
-		}
-		
-		throw new Exception($msg, 1);
-	}
 
 }
 
