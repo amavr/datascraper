@@ -1,8 +1,10 @@
 <?php
 
 include 'vartable.class.php';
+include 'cookiestorage.class.php';
 include 'scriptaction.class.php';
 include 'scripttextaction.class.php';
+include 'scriptcookieaction.class.php';
 include 'scriptdateaction.class.php';
 include 'scriptdownloadaction.class.php';
 include 'scriptsetvaraction.class.php';
@@ -22,6 +24,7 @@ class ActionBuilder
 
 	public $actions = array();
 	public $debugMode = false;
+	public $iData = "";
 
 	public function setLogName($LogFileName)
 	{
@@ -30,23 +33,47 @@ class ActionBuilder
 
 	public function execute()
 	{
+		$buf = "";
+		
 		$this->logger->Open();
 		$num = count($this->actions);
 		$i = 0;
 		foreach($this->actions as $action)
 		{
 			$i++;
+			$action->iData = $this->iData;
 			$action->execute(true, sprintf("%d/%d", $i, $num));
+			$buf .= $action->bData;
 		}
 		$this->logger->Close();
+		
+		return empty($buf) ? $this->iData : $buf;
 	}
 
-	public function load($file_name)
+	public function load($file_name, $data = null)
 	{
+		$this->iData = $data;
+		
 		$this->xmldoc = new DOMDocument();
 		$this->xmldoc->load($file_name);
 		$root = $this->xmldoc->documentElement;
 		$this->actions = $this->makeChilds($root);
+		return;
+		// если на вход первого действия не поступает данных
+		if($data == null)
+		{
+		}
+		// если на вход первого действия поступают данные
+		// то мы загружаем их через доп. текстовы узел
+		else
+		{
+			$this->actions = array();
+			$action = new ScriptTextAction();
+			$action->setLogger($this->logger);
+			$action->debugMode = $this->debugMode;
+			$action->childs = $this->makeChilds($root);
+			$this->actions[] = $action;
+		}
 	}
 
 	private function makeChilds($parent)
@@ -76,6 +103,10 @@ class ActionBuilder
 		{
 			case "text":
 				$action = new ScriptTextAction();
+				break;
+
+			case "cookie":
+				$action = new ScriptCookieAction();
 				break;
 
 			case "date":
