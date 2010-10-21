@@ -34,15 +34,12 @@ class ScriptSaveAction extends ScriptAction
 
 	private function write($data)
 	{
-		// $data = iconv("UTF-8", $this->enc, $data);
-		// if(strtoupper($this->enc) == "UTF-8") $data = utf8_encode($data);
-			
-		$f = fopen($this->fname, ($this->adddata) ? "a" : "w");
-		if($f)
-		{
-			fwrite($f, $data);
-			fclose($f);
-		}
+		$data = iconv("windows-1251", $this->enc, $data);
+		
+		if($this->adddata)
+			file_put_contents($this->fname, $data, FILE_APPEND);
+		else
+			file_put_contents($this->fname, $data);
 	}
 
 }

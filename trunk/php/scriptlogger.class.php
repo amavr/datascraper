@@ -12,7 +12,6 @@ class ScriptLogger
 	
 	public function Open()
 	{
-		// echo("Im in Open()s");
 		$this->logfile = fopen($this->path, "a+");
 	}
 	

@@ -42,7 +42,10 @@ class ScriptLoadAction extends ScriptAction
 				$this->trace($msg);
 			}
 			else
+			{
+				$data = iconv($this->enc, "windows-1251", $data);
 				return $data;
+			}
 		}
 		
 		throw new Exception($msg, 1);
@@ -50,22 +53,45 @@ class ScriptLoadAction extends ScriptAction
 	
 	protected function loadText($url)
 	{
-		$this->trace($this->name.": ".$url);
-	
-		$ch = curl_init();  
-		
-		curl_setopt($ch, CURLOPT_COOKIE,  CookieSorage::getInstance()->cookies);
-		// curl_setopt($ch, CURLOPT_COOKIEJAR, self::$cookie_file_name);
-		// curl_setopt($ch, CURLOPT_COOKIEFILE, self::$cookie_file_name);
-		
-		curl_setopt($ch, CURLOPT_URL, $url); // set url to post to 
-		curl_setopt($ch, CURLOPT_TIMEOUT, 900);
-		curl_setopt($ch, CURLOPT_USERAGENT, $this->agent);
-		curl_setopt($ch, CURLOPT_FAILONERROR, false);  
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);// allow redirects  
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); // return into a variable  
-		$result = curl_exec($ch); // run the whole process  
-		curl_close($ch);   
+		$proxy = "";
+		$max_times = 20;
+		while($max_times > 0)
+		{
+			$this->trace($this->name.": ".$url);
+			
+			$ch = curl_init();  
+			curl_setopt($ch, CURLOPT_COOKIE,  CookieSorage::getInstance()->cookies);
+			// curl_setopt($ch, CURLOPT_COOKIEJAR, self::$cookie_file_name);
+			// curl_setopt($ch, CURLOPT_COOKIEFILE, self::$cookie_file_name);
+			
+			if(ProxyList::getInstance()->HasProxy())
+			{
+				$proxy = ProxyList::getInstance()->Current();
+				curl_setopt($ch, CURLOPT_PROXY, $proxy);
+				// curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
+			}
+			
+			curl_setopt($ch, CURLOPT_URL, $url); // set url to post to 
+			curl_setopt($ch, CURLOPT_TIMEOUT, 900);
+			curl_setopt($ch, CURLOPT_USERAGENT, $this->agent);
+			curl_setopt($ch, CURLOPT_FAILONERROR, false);  
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);// allow redirects  
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); // return into a variable  
+			$result = curl_exec($ch); // run the whole process
+			$errno = curl_errno($ch);
+			$error = curl_error($ch);
+			curl_close($ch);
+			
+			if($errno == 0) break;
+			
+			$this->trace($this->name." ERROR: $errno $error");
+			
+			$max_times--;
+			if($max_times > 0)
+				$this->trace($this->name." change proxy: $proxy -> ".ProxyList::getInstance()->Next());
+		}
+
+		$result = iconv($this->enc, "windows-1251", $result);
 
 		CookieSorage::getInstance()->ParseCookie($result);
 		

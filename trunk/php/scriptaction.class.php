@@ -8,6 +8,8 @@ abstract class ScriptAction
 	public $name = "";
 	public $type = "";
 	public $childs = array();
+	
+	public $work_dir = "";
 
 	public $iData = "";
 	public $oData = "";

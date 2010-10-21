@@ -1,6 +1,7 @@
 <?php
 
 include 'vartable.class.php';
+include 'proxylist.class.php';
 include 'cookiestorage.class.php';
 include 'scriptaction.class.php';
 include 'scripttextaction.class.php';
@@ -25,12 +26,25 @@ class ActionBuilder
 	public $actions = array();
 	public $debugMode = false;
 	public $iData = "";
+	private $work_dir = "";
+
+	public function __construct($work_dir)
+	{
+		if (function_exists('date_default_timezone_set'))
+			date_default_timezone_set('Europe/Moscow');
+		$this->work_dir = $work_dir;
+	}
 
 	public function setLogName($LogFileName)
 	{
-		$this->logger = new ScriptLogger($LogFileName);
+		$this->logger = new ScriptLogger($LogFileName, $this->work_dir);
 	}
 
+	public function loadProxies($FileName)
+	{
+		ProxyList::getInstance()->Load($FileName);
+	}
+	
 	public function execute()
 	{
 		$buf = "";
@@ -58,22 +72,6 @@ class ActionBuilder
 		$this->xmldoc->load($file_name);
 		$root = $this->xmldoc->documentElement;
 		$this->actions = $this->makeChilds($root);
-		return;
-		// если на вход первого действия не поступает данных
-		if($data == null)
-		{
-		}
-		// если на вход первого действия поступают данные
-		// то мы загружаем их через доп. текстовы узел
-		else
-		{
-			$this->actions = array();
-			$action = new ScriptTextAction();
-			$action->setLogger($this->logger);
-			$action->debugMode = $this->debugMode;
-			$action->childs = $this->makeChilds($root);
-			$this->actions[] = $action;
-		}
 	}
 
 	private function makeChilds($parent)
@@ -148,6 +146,7 @@ class ActionBuilder
 
 		if($action)
 		{
+			$action->work_dir = $this->work_dir; 
 			$action->setLogger($this->logger);
 			$action->debugMode = $this->debugMode;
 			$action->load($element);
