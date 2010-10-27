@@ -34,7 +34,7 @@ class ScriptSaveAction extends ScriptAction
 
 	private function write($data)
 	{
-		$data = iconv("windows-1251", $this->enc, $data);
+		$data = iconv($this->def_encoding, $this->enc, $data);
 		
 		if($this->adddata)
 			file_put_contents($this->fname, $data, FILE_APPEND);

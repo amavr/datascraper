@@ -18,7 +18,7 @@ class ScriptReplaceAction extends ScriptAction
 
     protected function getAttributes($element)
     {
-        $this->pattern = "!".$element->getAttribute("pattern")."!si";
+        $this->pattern = "!".$element->getAttribute("pattern")."!siu";
         $this->replace = $element->getAttribute("replacement");
     }
 }

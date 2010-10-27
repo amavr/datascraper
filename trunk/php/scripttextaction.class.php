@@ -6,7 +6,7 @@ class ScriptTextAction extends ScriptAction
 
     protected function executeInternal($deep)
     {
-        $this->oData = VarTable::ParseVariables(iconv("utf-8", "windows-1251", $this->text));
+        $this->oData = VarTable::ParseVariables($this->text);
         if($deep)
             $this->executeChild();
         else

@@ -10,6 +10,12 @@ class ScriptFindAction extends ScriptAction
 	protected function executeInternal($deep)
 	{
 		// $this->trace($this->name.": pattern=".$this->pattern);
+		
+		// preg_match_all($this->pattern, $this->iData, $mm, PREG_SET_ORDER);
+		// $this->trace($this->name.": found ".count($mm)." expressions");
+		// return;
+		
+		
 		preg_match_all($this->pattern, $this->iData, $mm);
 		for($i = 0; $i < count($mm[0]); $i++)
 		{
@@ -38,7 +44,7 @@ class ScriptFindAction extends ScriptAction
 
     protected function getAttributes($element)
     {
-        $this->pattern = "!".$element->getAttribute("pattern")."!si";
+        $this->pattern = "!".$element->getAttribute("pattern")."!siu";
         $this->fmtstr = $element->getAttribute("format-string");
         $this->isUnique = (strtoupper($element->getAttribute("unique")) == "TRUE");
     }

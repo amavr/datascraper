@@ -17,7 +17,7 @@ class VarTable
 	public static function ParseVariables($string)
 	{
 		$a = self::getInstance()->vars;
-		$patt = "!\{(\D[^\}]*)\}!si";
+		$patt = "!\{(\D[^\}]*)\}!siu";
 		preg_match_all($patt, $string, $mm);
 		for($i = 0; $i < count($mm[1]); $i++)
 		{
