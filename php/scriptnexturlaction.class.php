@@ -71,7 +71,7 @@ class ScriptNextURLAction extends ScriptLoadAction
 
     protected function getAttributes($element)
     {
-        $this->pattern = "!".$element->getAttribute("pattern")."!si";
+        $this->pattern = "!".$element->getAttribute("pattern")."!siu";
         $this->fmtstr = $element->getAttribute("format-string");
         $this->do_equal = (strtoupper($element->getAttribute("append")) == "TRUE") ? true : false;
     }

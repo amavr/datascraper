@@ -52,7 +52,7 @@ class ProxyList
     
     function __construct()
     {
-	    $this->vars = array();
+	    $this->proxies = array();
     }
 }
 

@@ -13,6 +13,10 @@ class ScriptLoadAction extends ScriptAction
 			$this->oData = $this->loadText($this->iData);
 		else
 			$this->oData = $this->read($this->iData);
+			
+		// преобразование в стандартную кодировку потоков
+		$this->oData = iconv($this->enc, $this->def_encoding, $this->oData);
+		// file_put_contents("buffer.txt", $this->oData);
 
 		if($deep)
 			$this->executeChild();
@@ -43,7 +47,6 @@ class ScriptLoadAction extends ScriptAction
 			}
 			else
 			{
-				$data = iconv($this->enc, "windows-1251", $data);
 				return $data;
 			}
 		}
@@ -55,6 +58,7 @@ class ScriptLoadAction extends ScriptAction
 	{
 		$proxy = "";
 		$max_times = 20;
+		$i = 1;
 		while($max_times > 0)
 		{
 			$this->trace($this->name.": ".$url);
@@ -71,6 +75,8 @@ class ScriptLoadAction extends ScriptAction
 				// curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
 			}
 			
+			$headers = array('Content-type: text/html; charset='.$this->enc);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);			
 			curl_setopt($ch, CURLOPT_URL, $url); // set url to post to 
 			curl_setopt($ch, CURLOPT_TIMEOUT, 900);
 			curl_setopt($ch, CURLOPT_USERAGENT, $this->agent);
@@ -84,15 +90,14 @@ class ScriptLoadAction extends ScriptAction
 			
 			if($errno == 0) break;
 			
-			$this->trace($this->name." ERROR: $errno $error");
+			$this->trace($this->name." in $i time. ERROR: $errno $error");
 			
+			$i++;
 			$max_times--;
-			if($max_times > 0)
+			if($max_times > 0 && ProxyList::HasProxy())
 				$this->trace($this->name." change proxy: $proxy -> ".ProxyList::getInstance()->Next());
 		}
-
-		$result = iconv($this->enc, "windows-1251", $result);
-
+		
 		CookieSorage::getInstance()->ParseCookie($result);
 		
 		return $result;  	
