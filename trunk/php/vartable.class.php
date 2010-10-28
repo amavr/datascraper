@@ -18,11 +18,14 @@ class VarTable
 	{
 		$a = self::getInstance()->vars;
 		$patt = "!\{(\D[^\}]*)\}!siu";
-		preg_match_all($patt, $string, $mm);
-		for($i = 0; $i < count($mm[1]); $i++)
+		preg_match_all($patt, $string, $mm, PREG_SET_ORDER);
+		for($i = 0; $i < count($mm); $i++)
 		{
-			if(array_key_exists($mm[1][$i], $a))
-				$string = str_replace("{".$mm[1][$i]."}", $a[$mm[1][$i]], $string);
+			if(array_key_exists($mm[$i][1], $a))
+			{
+				// $string = mb_ereg_replace("!{".$mm[1][$i]."}!", $a[$mm[1][$i]], $string);
+				$string = str_replace("{".$mm[$i][1]."}", $a[$mm[$i][1]], $string);
+			}
 		}
 		return $string;
 	}

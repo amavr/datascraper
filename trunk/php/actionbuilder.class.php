@@ -59,6 +59,7 @@ class ActionBuilder
 			$action->execute(true, sprintf("%d/%d", $i, $num));
 			$buf .= $action->bData;
 		}
+		// file_put_contents("buffer.txt", $buf);
 		$this->logger->Close();
 		
 		return empty($buf) ? $this->iData : $buf;

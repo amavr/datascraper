@@ -18,7 +18,7 @@ abstract class ScriptAction
 	public $logger;
 	private $info = "";
 	
-	protected $def_encoding = "utf-8";
+	protected $def_encoding = "UTF-8";
 
 	abstract protected function executeInternal($deep);
 	abstract protected function getAttributes($element);
