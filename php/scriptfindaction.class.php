@@ -16,12 +16,12 @@ class ScriptFindAction extends ScriptAction
 		// return;
 		
 		
-		preg_match_all($this->pattern, $this->iData, $mm);
-		for($i = 0; $i < count($mm[0]); $i++)
+		preg_match_all($this->pattern, $this->iData, $mm, PREG_SET_ORDER);
+		for($i = 0; $i < count($mm); $i++)
 		{
 			$s = $this->fmtstr;
-			for($j = 0; $j < count($mm); $j++)
-				$s = str_replace("{".$j."}", $mm[$j][$i], $s);
+			for($j = 0; $j < count($mm[$i]); $j++)
+				$s = str_replace("{".$j."}", $mm[$i][$j], $s);
 
 			// $this->trace($this->name.": ".$s);
 

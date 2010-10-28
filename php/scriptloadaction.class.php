@@ -56,13 +56,13 @@ class ScriptLoadAction extends ScriptAction
 	
 	protected function loadText($url)
 	{
+		$this->trace($this->name.": ".$url);
+			
 		$proxy = "";
 		$max_times = 20;
 		$i = 1;
 		while($max_times > 0)
 		{
-			$this->trace($this->name.": ".$url);
-			
 			$ch = curl_init();  
 			curl_setopt($ch, CURLOPT_COOKIE,  CookieSorage::getInstance()->cookies);
 			// curl_setopt($ch, CURLOPT_COOKIEJAR, self::$cookie_file_name);
@@ -75,8 +75,8 @@ class ScriptLoadAction extends ScriptAction
 				// curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
 			}
 			
-			$headers = array('Content-type: text/html; charset='.$this->enc);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);			
+			// $headers = array('Content-type: text/html; charset='.$this->enc);
+			// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);			
 			curl_setopt($ch, CURLOPT_URL, $url); // set url to post to 
 			curl_setopt($ch, CURLOPT_TIMEOUT, 900);
 			curl_setopt($ch, CURLOPT_USERAGENT, $this->agent);
@@ -94,7 +94,7 @@ class ScriptLoadAction extends ScriptAction
 			
 			$i++;
 			$max_times--;
-			if($max_times > 0 && ProxyList::HasProxy())
+			if($max_times > 0 && ProxyList::getInstance()->HasProxy())
 				$this->trace($this->name." change proxy: $proxy -> ".ProxyList::getInstance()->Next());
 		}
 		

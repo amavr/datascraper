@@ -20,8 +20,6 @@ class ScriptNextURLAction extends ScriptLoadAction
 		
 		do
 		{
-			$this->oData = $this->read($url);
-			
 			if(stripos(trim($url), "http://") === 0)
 				$this->oData = $this->loadText($url);
 			else
