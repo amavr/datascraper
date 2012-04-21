@@ -183,8 +183,19 @@ namespace DataScraper
 
         private static void BackUp(string FileName)
         {
-            string backup = Path.ChangeExtension(FileName, "back");
-            if (File.Exists(backup)) File.Delete(backup);
+            string ext = Path.GetExtension(FileName);
+            string name = Path.GetFileNameWithoutExtension(FileName);
+            string backup = String.Empty;
+            int i = 0;
+            do
+            {
+                backup = String.Format("{0}-{1}{2}", name, i, ext);
+                i++;
+            }
+            while (File.Exists(backup));
+
+            // string backup = Path.ChangeExtension(FileName, "back");
+            // if (File.Exists(backup)) File.Delete(backup);
             File.Copy(FileName, backup);
             Console.WriteLine("Backup file {0} to {1}", FileName, backup);
         }
