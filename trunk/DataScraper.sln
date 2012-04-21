@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C# Express 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dsxactions", "dsxactions\dsxactions.csproj", "{71A2D0D0-257E-462A-8433-104B80C370A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dsxeditor", "dsxeditor\dsxeditor.csproj", "{BDFD3369-AE50-4B86-BE78-9C1EA7C4187B}"

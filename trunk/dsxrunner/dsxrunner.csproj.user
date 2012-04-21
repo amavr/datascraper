@@ -1,10 +1,21 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartArguments>proxies=px.txt tervolina.xml</StartArguments>
-    <StartWorkingDirectory>D:\Projects\DSX\drakon\tervolina.ru</StartWorkingDirectory>
+    <StartArguments>petersburg2.ru.xml</StartArguments>
+    <StartWorkingDirectory>D:\Projects\KogdaKak\Data\events\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <StartArguments>proxies=px.txt tervolina.xml</StartArguments>
     <StartWorkingDirectory>D:\Projects\DSX\drakon\tervolina.ru</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishUrlHistory />
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>ru-RU</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
 </Project>
