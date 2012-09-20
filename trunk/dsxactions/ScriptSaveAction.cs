@@ -30,6 +30,7 @@ namespace DataScraper
         {
             // В имени файла могут использователься SetVarAction
             FileName = VarTable.ParseVariables(FileName);
+            FileName = IncTable.ParseVariables(FileName);
 
             string path = Path.GetDirectoryName(FileName);
 

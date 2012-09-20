@@ -164,6 +164,10 @@ namespace DataScraper
                     action = new ScriptNextURLAction();
                     break;
 
+                case ScriptConsts.TYPE_INC:
+                    action = new ScriptIncAction();
+                    break;
+
             }
             action.Load(Element);
 

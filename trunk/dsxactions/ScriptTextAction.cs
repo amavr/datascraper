@@ -30,6 +30,8 @@ namespace DataScraper
                 Text = String.Empty;
 
             OutputFlow = VarTable.ParseVariables(Text);
+            OutputFlow = IncTable.ParseVariables(OutputFlow);
+
             ExecuteChild(OutputFlow);
         }
 

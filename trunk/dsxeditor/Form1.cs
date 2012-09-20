@@ -656,6 +656,11 @@ namespace DataScraper
             AddActionNode(new ActionTreeNode(new ScriptDownloadAction()));
         }
 
+        private void btnNewIncrement_Click(object sender, EventArgs e)
+        {
+            AddActionNode(new ActionTreeNode(new ScriptIncAction()));
+        }
+
         private void btnNewCookie_Click(object sender, EventArgs e)
         {
             AddActionNode(new ActionTreeNode(new ScriptCookieAction()));
