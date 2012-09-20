@@ -53,7 +53,7 @@ namespace DataScraper
         }
 
         [DisplayName("Cookie")]
-        public string Text { get; set; }
+        new public string Text { get; set; }
 
     }
 }

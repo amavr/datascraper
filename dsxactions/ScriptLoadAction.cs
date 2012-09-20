@@ -383,7 +383,7 @@ namespace DataScraper
         internal WebRequest request;
         internal WebResponse response;
         internal Stream remote_stream;
-        internal Stream local_stream;
+        // internal Stream local_stream;
         internal byte[] buffer = new byte[16384];
         internal Encoding encoding;
         internal StringBuilder text = new StringBuilder();

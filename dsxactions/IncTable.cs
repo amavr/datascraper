@@ -6,45 +6,52 @@ using System.Text.RegularExpressions;
 
 namespace DataScraper
 {
-    class VarTable
+    class IncTable
     {
-        private static VarTable _instance = null;
-        private Dictionary<String,String> _vars = null;
+        private static IncTable _instance = null;
+        private Dictionary<String,ScriptIncAction> _vars = null;
 
-        public static VarTable Instance
+        public static IncTable Instance
         {
             get
             {
-                if (_instance == null) _instance = new VarTable();
+                if (_instance == null) _instance = new IncTable();
                 return _instance;
             }
         }
 
         public static string ParseVariables(string Sour)
         {
-            Dictionary<String,String> vars = Instance._vars;
+            Dictionary<String,ScriptIncAction> vars = Instance._vars;
 
             string dest = Sour;
             Regex re = new Regex(@"\{(\D[^\}]*)\}", RegexOptions.Singleline | RegexOptions.IgnoreCase);
             MatchCollection mc = re.Matches(Sour);
 
+            // В отличие от простой подстановки текста, здесь требуется устанавливать последовательные значения инкрементатора
+            // поэтому строка разбивается на части, из которых потом собирается результат
             if (mc.Count > 0)
             {
+
                 List<string> ss = new List<string>();
                 string rest = dest;
                 int beg_pos = 0;
                 for (int i = 0; i < mc.Count; i++)
                 {
+                    // поиск икремента
                     Match m = mc[i];
                     string var_name = m.Groups[1].Value;
+                    ScriptIncAction action = vars[var_name];
 
-                    if (vars.ContainsKey(var_name))
+                    // если инкремент не найден, то ничего не меняем
+                    if (action == null)
                     {
-                        ss.Add(dest.Substring(beg_pos, m.Index - beg_pos) + vars[var_name]);
+                        ss.Add(dest.Substring(beg_pos, m.Index - beg_pos) + m.Value);
                     }
                     else
                     {
-                        ss.Add(dest.Substring(beg_pos, m.Index - beg_pos) + m.Value);
+                        ss.Add(dest.Substring(beg_pos, m.Index - beg_pos) + action.Value.ToString());
+                        action.Inc();
                     }
                     // сохраняем остаток
                     beg_pos = m.Index + m.Length;
@@ -60,12 +67,12 @@ namespace DataScraper
             return dest;
         }
 
-        private VarTable()
+        private IncTable()
         {
-            _vars = new Dictionary<string, string>();
+            _vars = new Dictionary<string, ScriptIncAction>();
         }
 
-        public string this[string VarName]
+        public ScriptIncAction this[string VarName]
         {
             get
             {
@@ -75,7 +82,7 @@ namespace DataScraper
                 }
                 catch (Exception)
                 {
-                    return "";
+                    return null;
                 }
             }
             set

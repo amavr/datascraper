@@ -51,6 +51,7 @@
             this.miNewVarSet = new System.Windows.Forms.ToolStripMenuItem();
             this.miNewVarGet = new System.Windows.Forms.ToolStripMenuItem();
             this.newSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -98,7 +99,7 @@
             this.tboxBack = new System.Windows.Forms.TextBox();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
             this.dlgSave = new System.Windows.Forms.SaveFileDialog();
-            this.newCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNewIncrement = new System.Windows.Forms.ToolStripButton();
             this.statusBar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -127,7 +128,7 @@
             // slabTime
             // 
             this.slabTime.Name = "slabTime";
-            this.slabTime.Size = new System.Drawing.Size(89, 17);
+            this.slabTime.Size = new System.Drawing.Size(99, 17);
             this.slabTime.Text = "Time: 0 min 0 sec";
             // 
             // menuStrip1
@@ -153,14 +154,14 @@
             this.toolStripMenuItem1,
             this.miExit});
             this.programmToolStripMenuItem.Name = "programmToolStripMenuItem";
-            this.programmToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.programmToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.programmToolStripMenuItem.Text = "Project";
             // 
             // miNewProject
             // 
             this.miNewProject.Name = "miNewProject";
             this.miNewProject.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.miNewProject.Size = new System.Drawing.Size(151, 22);
+            this.miNewProject.Size = new System.Drawing.Size(146, 22);
             this.miNewProject.Text = "New";
             this.miNewProject.Click += new System.EventHandler(this.btnNewProject_Click);
             // 
@@ -168,7 +169,7 @@
             // 
             this.miOpenProject.Name = "miOpenProject";
             this.miOpenProject.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.miOpenProject.Size = new System.Drawing.Size(151, 22);
+            this.miOpenProject.Size = new System.Drawing.Size(146, 22);
             this.miOpenProject.Text = "Open";
             this.miOpenProject.Click += new System.EventHandler(this.btnOpenProject_Click);
             // 
@@ -176,26 +177,26 @@
             // 
             this.miSaveProject.Name = "miSaveProject";
             this.miSaveProject.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.miSaveProject.Size = new System.Drawing.Size(151, 22);
+            this.miSaveProject.Size = new System.Drawing.Size(146, 22);
             this.miSaveProject.Text = "Save";
             this.miSaveProject.Click += new System.EventHandler(this.btnSaveProject_Click);
             // 
             // miSaveAsProject
             // 
             this.miSaveAsProject.Name = "miSaveAsProject";
-            this.miSaveAsProject.Size = new System.Drawing.Size(151, 22);
+            this.miSaveAsProject.Size = new System.Drawing.Size(146, 22);
             this.miSaveAsProject.Text = "Save as";
             this.miSaveAsProject.Click += new System.EventHandler(this.miSaveAsProject_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(143, 6);
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
-            this.miExit.Size = new System.Drawing.Size(151, 22);
+            this.miExit.Size = new System.Drawing.Size(146, 22);
             this.miExit.Text = "Exit";
             this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
@@ -215,88 +216,95 @@
             this.newCookieToolStripMenuItem,
             this.newDateToolStripMenuItem});
             this.actionToolStripMenuItem.Name = "actionToolStripMenuItem";
-            this.actionToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.actionToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.actionToolStripMenuItem.Text = "Action";
             // 
             // miRun
             // 
             this.miRun.Name = "miRun";
-            this.miRun.Size = new System.Drawing.Size(180, 22);
+            this.miRun.Size = new System.Drawing.Size(176, 22);
             this.miRun.Text = "Run";
             this.miRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // miRunAt
             // 
             this.miRunAt.Name = "miRunAt";
-            this.miRunAt.Size = new System.Drawing.Size(180, 22);
+            this.miRunAt.Size = new System.Drawing.Size(176, 22);
             this.miRunAt.Text = "Run at";
             this.miRunAt.Click += new System.EventHandler(this.btnRunBranch_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(173, 6);
             // 
             // miNewText
             // 
             this.miNewText.Name = "miNewText";
-            this.miNewText.Size = new System.Drawing.Size(180, 22);
+            this.miNewText.Size = new System.Drawing.Size(176, 22);
             this.miNewText.Text = "New text";
             this.miNewText.Click += new System.EventHandler(this.btnNewText_Click);
             // 
             // miNewLoad
             // 
             this.miNewLoad.Name = "miNewLoad";
-            this.miNewLoad.Size = new System.Drawing.Size(180, 22);
+            this.miNewLoad.Size = new System.Drawing.Size(176, 22);
             this.miNewLoad.Text = "New loading";
             this.miNewLoad.Click += new System.EventHandler(this.btnNewLoad_Click);
             // 
             // miNewFind
             // 
             this.miNewFind.Name = "miNewFind";
-            this.miNewFind.Size = new System.Drawing.Size(180, 22);
+            this.miNewFind.Size = new System.Drawing.Size(176, 22);
             this.miNewFind.Text = "New finding";
             this.miNewFind.Click += new System.EventHandler(this.btnNewSearch_Click);
             // 
             // miNewReplace
             // 
             this.miNewReplace.Name = "miNewReplace";
-            this.miNewReplace.Size = new System.Drawing.Size(180, 22);
+            this.miNewReplace.Size = new System.Drawing.Size(176, 22);
             this.miNewReplace.Text = "New replacing";
             this.miNewReplace.Click += new System.EventHandler(this.btnNewReplace_Click);
             // 
             // miNewVarSet
             // 
             this.miNewVarSet.Name = "miNewVarSet";
-            this.miNewVarSet.Size = new System.Drawing.Size(180, 22);
+            this.miNewVarSet.Size = new System.Drawing.Size(176, 22);
             this.miNewVarSet.Text = "New variable setter";
             this.miNewVarSet.Click += new System.EventHandler(this.btnNewSetVar_Click);
             // 
             // miNewVarGet
             // 
             this.miNewVarGet.Name = "miNewVarGet";
-            this.miNewVarGet.Size = new System.Drawing.Size(180, 22);
+            this.miNewVarGet.Size = new System.Drawing.Size(176, 22);
             this.miNewVarGet.Text = "New variable getter";
             this.miNewVarGet.Click += new System.EventHandler(this.btnNewGetVar_Click);
             // 
             // newSaveToolStripMenuItem
             // 
             this.newSaveToolStripMenuItem.Name = "newSaveToolStripMenuItem";
-            this.newSaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newSaveToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.newSaveToolStripMenuItem.Text = "New save";
             this.newSaveToolStripMenuItem.Click += new System.EventHandler(this.btnNewSave_Click);
+            // 
+            // newCookieToolStripMenuItem
+            // 
+            this.newCookieToolStripMenuItem.Name = "newCookieToolStripMenuItem";
+            this.newCookieToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.newCookieToolStripMenuItem.Text = "New cookie";
+            this.newCookieToolStripMenuItem.Click += new System.EventHandler(this.btnNewCookie_Click);
             // 
             // newDateToolStripMenuItem
             // 
             this.newDateToolStripMenuItem.Name = "newDateToolStripMenuItem";
-            this.newDateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newDateToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.newDateToolStripMenuItem.Text = "New date";
             this.newDateToolStripMenuItem.Click += new System.EventHandler(this.btnNewDate_Click);
             // 
             // miAbout
             // 
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(48, 20);
+            this.miAbout.Size = new System.Drawing.Size(52, 20);
             this.miAbout.Text = "About";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
             // 
@@ -328,6 +336,7 @@
             this.btnNewSetVar,
             this.btnNewGetVar,
             this.btnNewSave,
+            this.btnNewIncrement,
             this.btnNewCookie,
             this.btnNewDate,
             this.toolStripSeparator3,
@@ -676,12 +685,12 @@
             this.treeScript.ShowNodeToolTips = true;
             this.treeScript.Size = new System.Drawing.Size(282, 290);
             this.treeScript.TabIndex = 0;
-            this.treeScript.DragLeave += new System.EventHandler(this.treeScript_DragLeave);
-            this.treeScript.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeScript_DragDrop);
-            this.treeScript.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeScript_AfterSelect);
-            this.treeScript.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeScript_DragEnter);
             this.treeScript.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeScript_ItemDrag);
+            this.treeScript.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeScript_AfterSelect);
+            this.treeScript.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeScript_DragDrop);
+            this.treeScript.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeScript_DragEnter);
             this.treeScript.DragOver += new System.Windows.Forms.DragEventHandler(this.treeScript_DragOver);
+            this.treeScript.DragLeave += new System.EventHandler(this.treeScript_DragLeave);
             // 
             // ilActions
             // 
@@ -698,6 +707,7 @@
             this.ilActions.Images.SetKeyName(8, "import16.png");
             this.ilActions.Images.SetKeyName(9, "calendar_16.gif");
             this.ilActions.Images.SetKeyName(10, "cookie-16.png");
+            this.ilActions.Images.SetKeyName(11, "2+.png");
             // 
             // splitContainer2
             // 
@@ -832,12 +842,15 @@
             this.dlgSave.DefaultExt = "dsx";
             this.dlgSave.Filter = "Script files|*.dsx|Xml files|*.xml|All files|*.*";
             // 
-            // newCookieToolStripMenuItem
+            // btnNewIncrement
             // 
-            this.newCookieToolStripMenuItem.Name = "newCookieToolStripMenuItem";
-            this.newCookieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newCookieToolStripMenuItem.Text = "New cookie";
-            this.newCookieToolStripMenuItem.Click += new System.EventHandler(this.btnNewCookie_Click);
+            this.btnNewIncrement.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNewIncrement.Image = ((System.Drawing.Image)(resources.GetObject("btnNewIncrement.Image")));
+            this.btnNewIncrement.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNewIncrement.Name = "btnNewIncrement";
+            this.btnNewIncrement.Size = new System.Drawing.Size(28, 28);
+            this.btnNewIncrement.Text = "toolStripButton1";
+            this.btnNewIncrement.Click += new System.EventHandler(this.btnNewIncrement_Click);
             // 
             // frmMain
             // 
@@ -852,8 +865,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "DSX Editor";
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.statusBar.ResumeLayout(false);
             this.statusBar.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -950,6 +963,7 @@
         private System.Windows.Forms.ToolStripMenuItem newDateToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnNewCookie;
         private System.Windows.Forms.ToolStripMenuItem newCookieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnNewIncrement;
     }
 }
 
