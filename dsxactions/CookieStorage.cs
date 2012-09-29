@@ -9,7 +9,8 @@ namespace DataScraper
     public class CookieStorage
     {
         private static CookieStorage instance = null;
-        private string cookies = null;
+        private string cookies = String.Empty;
+        private string referer = String.Empty;
 
         public static CookieStorage Instance
         {
@@ -24,6 +25,7 @@ namespace DataScraper
         private CookieStorage()
         {
             cookies = String.Empty;
+            referer = String.Empty;
         }
 
         public static void Accept(HttpWebResponse Response)
@@ -40,7 +42,22 @@ namespace DataScraper
         {
             if (Request == null) return;
 
+            Request.Referer = Referer;
             Request.Headers.Add(HttpRequestHeader.Cookie, Cookies);
+            Referer = Request.RequestUri.AbsoluteUri;
+        }
+
+        public static String Referer
+        {
+            get
+            {
+                return Instance.referer;
+            }
+
+            set
+            {
+                Instance.referer = value;
+            }
         }
 
         public static String Cookies

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ACTIONS>
+  <ACTION name="Text action" desc="" type="text" text="">
+    <ACTION name="reg_id" desc="Первичный ключ таблицы regions" type="increment" init="2000" increment="1" />
+    <ACTION name="СПб" desc="" type="text" text="###Адмиралтейский######&#xD;&#xA;мо Коломна&#xD;&#xA;мо Сенной округ&#xD;&#xA;мо Адмиралтейский округ&#xD;&#xA;мо Семёновский&#xD;&#xA;мо Измайловское&#xD;&#xA;мо Екатерингофский&#xD;&#xA;@@@&#xD;&#xA;###Василеостровский###&#xD;&#xA;мо № 7&#xD;&#xA;мо Васильевский&#xD;&#xA;мо Гавань&#xD;&#xA;мо округ Морской&#xD;&#xA;мо № 11&#xD;&#xA;@@@&#xD;&#xA;###Выборгский###&#xD;&#xA;мо Сампсониевское&#xD;&#xA;мо Светлановское&#xD;&#xA;мо Сосновское&#xD;&#xA;мо № 15&#xD;&#xA;мо Парнас&#xD;&#xA;мо Шувалово-Озерки&#xD;&#xA;пос. Левашово&#xD;&#xA;пос. Парголово&#xD;&#xA;@@@&#xD;&#xA;###Калининский###&#xD;&#xA;мо Гражданка&#xD;&#xA;мо Академическое&#xD;&#xA;мо Финляндский округ&#xD;&#xA;мо № 21&#xD;&#xA;мо Пискарёвка&#xD;&#xA;мо Северный&#xD;&#xA;мо Прометей&#xD;&#xA;@@@&#xD;&#xA;###Кировский###&#xD;&#xA;мо Княжево&#xD;&#xA;мо Ульянка&#xD;&#xA;мо Дачное&#xD;&#xA;мо Автово&#xD;&#xA;мо Нарвский округ&#xD;&#xA;мо Красненькая речка&#xD;&#xA;мо Морские ворота&#xD;&#xA;@@@&#xD;&#xA;###Колпинский###&#xD;&#xA;г. Колпино&#xD;&#xA;пос. Металлострой&#xD;&#xA;пос. Петро-Славянка&#xD;&#xA;пос. Понтонный&#xD;&#xA;пос. Сапёрный&#xD;&#xA;пос. Усть-Ижора&#xD;&#xA;@@@&#xD;&#xA;###Красногвардейский###&#xD;&#xA;мо Полюстрово&#xD;&#xA;мо Большая Охта&#xD;&#xA;мо Малая Охта&#xD;&#xA;мо Пороховые&#xD;&#xA;мо Ржевка&#xD;&#xA;@@@&#xD;&#xA;###Красносельский###&#xD;&#xA;мо Юго-Запад&#xD;&#xA;мо Южно-Приморский&#xD;&#xA;мо Сосновая Поляна&#xD;&#xA;мо Урицк&#xD;&#xA;мо Константиновское&#xD;&#xA;мо Горелово&#xD;&#xA;г. Красное Село&#xD;&#xA;@@@&#xD;&#xA;###Кронштадтский###&#xD;&#xA;г. Кронштадт&#xD;&#xA;@@@&#xD;&#xA;###Курортный###&#xD;&#xA;г. Зеленогорск&#xD;&#xA;г. Сестрорецк&#xD;&#xA;пос. Белоостров&#xD;&#xA;пос. Комарово&#xD;&#xA;пос. Молодёжное&#xD;&#xA;пос. Песочный&#xD;&#xA;пос. Репино&#xD;&#xA;пос. Серово&#xD;&#xA;пос. Смолячково&#xD;&#xA;пос. Солнечное&#xD;&#xA;пос. Ушково&#xD;&#xA;@@@&#xD;&#xA;###Московский###&#xD;&#xA;мо Московская застава&#xD;&#xA;мо Гагаринское&#xD;&#xA;мо Новоизмайловское&#xD;&#xA;мо Пулковский меридиан&#xD;&#xA;мо Звёздное&#xD;&#xA;@@@&#xD;&#xA;###Невский###&#xD;&#xA;мо Невская застава&#xD;&#xA;мо Ивановский&#xD;&#xA;мо Обуховский&#xD;&#xA;мо Рыбацкое&#xD;&#xA;мо № 53&#xD;&#xA;мо № 54&#xD;&#xA;мо Невский округ&#xD;&#xA;мо Оккервиль&#xD;&#xA;мо № 57&#xD;&#xA;@@@&#xD;&#xA;###Петроградский###&#xD;&#xA;мо Введенский&#xD;&#xA;мо Кронверкское&#xD;&#xA;мо Посадский&#xD;&#xA;мо Аптекарский остров&#xD;&#xA;мо округ Петровский&#xD;&#xA;мо Чкаловское&#xD;&#xA;@@@&#xD;&#xA;###Петродворцовый###&#xD;&#xA;г. Ломоносов&#xD;&#xA;г. Петергоф&#xD;&#xA;пос. Стрельна&#xD;&#xA;@@@&#xD;&#xA;###Приморский###&#xD;&#xA;мо Лахта-Ольгино&#xD;&#xA;мо № 65&#xD;&#xA;мо Чёрная речка&#xD;&#xA;мо Комендантский аэродром&#xD;&#xA;мо Озеро Долгое&#xD;&#xA;мо Юнтолово&#xD;&#xA;мо Коломяги&#xD;&#xA;пос. Лисий Нос&#xD;&#xA;@@@&#xD;&#xA;###Пушкинский###&#xD;&#xA;г. Павловск&#xD;&#xA;г. Пушкин&#xD;&#xA;пос. Александровская&#xD;&#xA;пос. Тярлево&#xD;&#xA;пос. Шушары&#xD;&#xA;@@@&#xD;&#xA;###Фрунзенский###&#xD;&#xA;мо Волковское&#xD;&#xA;мо № 72&#xD;&#xA;мо Купчино&#xD;&#xA;мо Георгиевский&#xD;&#xA;мо № 75&#xD;&#xA;мо Балканский&#xD;&#xA;@@@&#xD;&#xA;###Центральный###&#xD;&#xA;мо Дворцовый округ&#xD;&#xA;мо № 78&#xD;&#xA;мо Литейный округ&#xD;&#xA;мо Смольнинское&#xD;&#xA;мо Лиговка-Ямская&#xD;&#xA;мо Владимирский&#xD;&#xA;@@@">
+      <ACTION name="Цикл по районам" desc="" type="find" pattern="(###([^#]+)###([^@]+))@@@" format-string="@@@{2}@@@&#xD;&#xA;###{3}###&#xD;&#xA;" unique="False" multithread="False">
+        <ACTION name="distr_id" desc="Получаем следующее значение из ключа" type="text" text="{reg_id}">
+          <ACTION name="distr_id" desc="Запоминаем полученный ключ" type="set-var" ascending="False" break="True" />
+        </ACTION>
+        <ACTION name="Район" desc="" type="find" pattern="@@@([^@]+)@@@" format-string="{1}" unique="False" multithread="False">
+          <ACTION name="distr_title" desc="" type="set-var" ascending="False" break="True" />
+        </ACTION>
+        <ACTION name="insert distr" desc="" type="text" text="insert into regions(id, parent_id, title) values({distr_id}, 3, '{distr_title}');&#xD;&#xA;" />
+        <ACTION name="Блок округов" desc="" type="find" pattern="###([^#]+)###" format-string="{1}" unique="False" multithread="False">
+          <ACTION name="Цикл по округам" desc="" type="find" pattern="(\S[^\r]+)\r\n" format-string="{1}" unique="False" multithread="False">
+            <ACTION name="okr_id" desc="Получаем следующее значение из ключа" type="text" text="{reg_id}">
+              <ACTION name="okr_id" desc="Запоминаем полученный ключ" type="set-var" ascending="False" break="True" />
+            </ACTION>
+            <ACTION name="okr_title" desc="" type="set-var" ascending="False" break="True" />
+            <ACTION name="insert okr" desc="" type="text" text="insert into regions(id, parent_id, title) values({okr_id}, {distr_id}, '{okr_title}');&#xD;&#xA;" />
+          </ACTION>
+        </ACTION>
+      </ACTION>
+    </ACTION>
+  </ACTION>
+</ACTIONS>
