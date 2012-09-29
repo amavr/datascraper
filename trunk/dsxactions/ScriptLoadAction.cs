@@ -84,6 +84,8 @@ namespace DataScraper
 
             HttpWebRequest wreq = (HttpWebRequest)req;
             wreq.AllowAutoRedirect = false;
+            if(!String.IsNullOrEmpty(OptionHeaders))
+                wreq.Headers.Add(OptionHeaders);
 
             if (Proxy != null)
                 wreq.Proxy = Proxy;
@@ -104,10 +106,11 @@ namespace DataScraper
                 wreq.Method = "GET";
             }
 
-            
+            Console.WriteLine("coockie charge: {0}", CookieStorage.Cookies);
             CookieStorage.Charge(wreq);
             HttpWebResponse wresp = (HttpWebResponse)wreq.GetResponse();
             CookieStorage.Accept(wresp);
+            Console.WriteLine("coockie accept: {0}", CookieStorage.Cookies);
 
             if (wresp == null) return null;
             
@@ -123,6 +126,8 @@ namespace DataScraper
                 wreq.ContentType = "application/x-www-form-urlencoded";
                 wreq.Method = "GET";
                 wreq.AllowAutoRedirect = false;
+                if (!String.IsNullOrEmpty(OptionHeaders))
+                    wreq.Headers.Add(OptionHeaders);
 
                 if (!String.IsNullOrEmpty(UserAgent)) wreq.UserAgent = UserAgent;
 
@@ -139,7 +144,8 @@ namespace DataScraper
         protected string WrappedRequest(string URI)
         {
             string response = String.Empty;
-            int i = ScriptConsts.MAX_LOAD_ATTEMPT;
+            // int i = ScriptConsts.MAX_LOAD_ATTEMPT;
+            int i = 1;
 
             while (i > 0)
             {
@@ -221,6 +227,7 @@ namespace DataScraper
             Info.AddValue("method", (Method == LoadMetod.GET) ? "GET" : "POST");
             Info.AddValue("agent", UserAgent);
             Info.AddValue("def-text", TextOnError);
+            Info.AddValue("opt-headers", OptionHeaders);
             if (Proxy != null)
             {
                 Info.AddValue("proxy-host", Proxy.Address.Host);
@@ -239,6 +246,7 @@ namespace DataScraper
             Method = (Info.GetString("method") == "POST") ? LoadMetod.POST : LoadMetod.GET;
             UserAgent = Info.GetString("agent");
             TextOnError = Info.GetString("def-text");
+            OptionHeaders = Info.GetString("opt-headers");
             int port = Info.GetInt32("proxy-port");
             if(port > 0)
                 Proxy = new WebProxy(Info.GetString("proxy-host"), port);
@@ -252,6 +260,7 @@ namespace DataScraper
             Element.SetAttribute("suppress-errors", SuppressErrors.ToString());
             Element.SetAttribute("agent", UserAgent);
             Element.SetAttribute("def-text", TextOnError);
+            Element.SetAttribute("opt-headers", OptionHeaders);
         }
 
         public override void GetAttributes(XmlElement Element)
@@ -260,6 +269,7 @@ namespace DataScraper
             DefaulEncoding = Element.GetAttribute("encoding");
             UserAgent = Element.GetAttribute("agent");
             TextOnError = Element.GetAttribute("def-text");
+            OptionHeaders = Element.GetAttribute("opt-headers");
             bool val = SuppressErrors;
             if (Boolean.TryParse(Element.GetAttribute("suppress-errors"), out val))
                 SuppressErrors = val;
@@ -288,6 +298,12 @@ namespace DataScraper
 
         [System.ComponentModel.Browsable(false)]
         public WebProxy Proxy { get; set; }
+
+
+        [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, IsDropDownResizable=true", typeof(UITypeEditor))]
+        public string OptionHeaders { get; set; }
+
+
 
         // Не использую, но и удалять пока не хочу 
         private string Request3(string URL)
